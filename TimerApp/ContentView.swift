@@ -15,16 +15,31 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 30.0) {
-                Text("残り10秒")
+                Text("残り\(timerValue - count)秒")
                     .font(.largeTitle)
                 HStack {
-                    ButtonView(buttonLavel: "start")
-                        .background(Color.red)
-                        .clipShape(Circle())
-                    ButtonView(buttonLavel: "stop")
-                        .background(Color.blue)
-                        .clipShape(Circle())
+                    Button {
+                        startTimer()
+                    } label: {
+                        ButtonView(buttonLavel: "start")
+                            .background(Color.red)
+                            .clipShape(Circle())
+                    }
+                    Button {
+                        if let unwrapedTimerHandler = timerHandler {
+                            if unwrapedTimerHandler.isValid == true {
+                                unwrapedTimerHandler.invalidate()
+                            }
+                        }
+                    } label: {
+                        ButtonView(buttonLavel: "stop")
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                    }
                 }
+            }
+            .onAppear {
+                count = 0
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -67,10 +82,10 @@ struct ButtonView: View {
     @State var buttonLavel: String
 
     var body: some View {
-        Text(buttonLavel)
-            .font(.title)
-            .foregroundColor(Color.white)
-            .frame(width: 140, height: 140)
+            Text(buttonLavel)
+                .font(.title)
+                .foregroundColor(Color.white)
+                .frame(width: 140, height: 140)
     }
 }
 

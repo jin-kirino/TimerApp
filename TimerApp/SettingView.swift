@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingView: View {
-    @State private var timerValue: Int = 10
+    @AppStorage("timer_value") var timerValue = 10
     
     var body: some View {
         VStack {
