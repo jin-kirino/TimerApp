@@ -11,6 +11,7 @@
 		FF6F751929EC2516004BE505 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F751829EC2516004BE505 /* ContentView.swift */; };
 		FF6F751B29EC2518004BE505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6F751A29EC2518004BE505 /* Assets.xcassets */; };
 		FF6F751E29EC2518004BE505 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF6F751D29EC2518004BE505 /* Preview Assets.xcassets */; };
+		FF6F752529EC2648004BE505 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F752429EC2648004BE505 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FF6F751829EC2516004BE505 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF6F751A29EC2518004BE505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF6F751D29EC2518004BE505 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF6F752429EC2648004BE505 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				FF6F751629EC2516004BE505 /* TimerAppApp.swift */,
 				FF6F751829EC2516004BE505 /* ContentView.swift */,
+				FF6F752429EC2648004BE505 /* SettingView.swift */,
 				FF6F751A29EC2518004BE505 /* Assets.xcassets */,
 				FF6F751C29EC2518004BE505 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6F752529EC2648004BE505 /* SettingView.swift in Sources */,
 				FF6F751929EC2516004BE505 /* ContentView.swift in Sources */,
 				FF6F751729EC2516004BE505 /* TimerAppApp.swift in Sources */,
 			);
