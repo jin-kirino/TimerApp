@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var timerHandler: Timer?
+    @State var count: Int = 0
+    @AppStorage("timer_value") var timerValue = 10
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 30.0) {
@@ -31,6 +35,31 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    // 1秒ごとカウントダウンする関数
+    func countDownTimer() {
+        count += 1
+        if timerValue - count <= 0 {
+            timerHandler?.invalidate()
+        }
+    }
+    
+    // カウントダウンをする条件を設定、当てはまったらcountdown()を実行
+    func startTimer() {
+        if let unwrapedTimerHandler = timerHandler {
+            if unwrapedTimerHandler.isValid == true {
+                return
+            }
+        }
+        
+        if timerValue - count <= 0 {
+            count = 0
+        }
+        
+        timerHandler = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            countDownTimer()
+        }
     }
 }
 
