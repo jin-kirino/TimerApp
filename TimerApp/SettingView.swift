@@ -12,6 +12,10 @@ struct SettingView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            Text("\(timerValue)秒")
+                .font(.largeTitle)
+            Spacer()
             Picker(selection: $timerValue) {
                 Text("10")
                     .tag(10)
@@ -29,6 +33,7 @@ struct SettingView: View {
                 Text("選択")
             }
             .pickerStyle(.wheel)
+            Spacer()
         }
     }
 }
